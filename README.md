@@ -14,10 +14,10 @@
   * NodeJS/ExpressJS
   
 ## Installation
-  *git clone https://github.com/xTunnieTek/BeApp
-  *npm update
-  *npm i react-router-dom
-  *npm install antd
+  *git clone https://github.com/xTunnieTek/BeApp*
+  *npm update*
+  *npm i react-router-dom*
+  *npm install antd*
 
 
 ## Import 
