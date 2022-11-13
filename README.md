@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Đây Là BeDating - Đang phát triển 
 
 - Đức Mỹ = MyPD
 - Văn Mạnh = ManhNV
