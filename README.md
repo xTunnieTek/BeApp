@@ -3,7 +3,7 @@
 
 ## Contributors
 
- - <a href = "https://www.facebook.com/mynameismy99" >Phạm Đức Mỹ | <b>MyPD</b> </a>
+ - <a href = "https://www.facebook.com/mynameismy99" >Phạm Đức Mỹ | <b>Pham_Duc_My</b> </a>
  - <a href = "https://www.facebook.com/FSTunnie" >Quách Công Tuấn | <b>TuanQC</b> </a>
  - <a href = "https://www.facebook.com/NQHNTD" >Nguyễn Quốc Huy | <b>HuyNQ</b> </a>
  - <a href = "https://www.facebook.com/manhchelsea6698" >Nguyễn Văn Mạnh | <b>ManhNV</b> </a>
