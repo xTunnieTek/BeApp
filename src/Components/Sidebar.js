@@ -21,10 +21,8 @@ const Sidebar = () => {
             setActive(clicked);
             window.location.href = clicked || '404';
         }
-
     }
 
-   
     return (
         <div class="Sidebar">
             <div class="profile">
