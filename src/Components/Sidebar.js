@@ -12,7 +12,11 @@ const items = [
     icon: <MailOutlined />,
   },
   {
-    label: "Navigation Two",
+    label: (
+      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+        Navigation One - Link
+      </a>
+    ),
     key: "app",
     icon: <AppstoreOutlined />,
   },
