@@ -1,7 +1,10 @@
+import "../Assets/CSS/MainLayout.css";
+import Logo from '../Assets/Images/Bedating.png';
+
 const Header = () => {
    return (
     <header>     
-        Header
+        <img src={Logo} className="logo" />
     </header>
     );
 };
