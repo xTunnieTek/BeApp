@@ -2,16 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px;
     width: 1570px;
     height: 100%;
     font-family: "Poppins", sans-serif;
+    margin: 0 auto;
   }
   
   .Container .container-fluid {
     width: 100%;
     height: 80vh;
-    padding: 50px;
+    padding-left: 50px;
   }
   
   .headMess {
@@ -29,7 +29,7 @@
     margin-top: 10px;
     padding: 10px;
     border-radius: 20px;
-    height: 60vh;
+    height: 75vh;
     overflow: auto;
   }
   
@@ -54,16 +54,17 @@
   }
   
   .userMess img {
-    width: 90%;
+    width: 60%;
     height: 90%;
     border-radius: 50%;
-    margin: 10px;
+    margin: 15px;
   }
   
   .userMess {
     display: flex;
     align-items: center;
   }
+
   
   .userMess p {
     margin: 10px;
@@ -99,6 +100,7 @@
   .fromMess {
     display: flex;
     justify-content: flex-start;
+    align-items: baseline
   }
   
   .fromMess img {
@@ -111,21 +113,25 @@
   .fromMess .timeMess {
     text-align: center;
     font-size: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    color: #969696af;
   }
   
   .fromMess .contentMess {
     background-color: #d9d9d9;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
     margin: 10px;
     width: fit-content;
     height: fit-content;
+    max-width: 30%;
   }
   
   .fromMess .contentMess p {
     font-size: 15px;
     display: contents;
+    word-wrap: break-word;
+
   }
   
   /* ====== */
@@ -133,46 +139,42 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: row-reverse;
-  }
-  
-  .toMess img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 10px;
+    align-items: baseline
   }
   
   .toMess .timeMess {
     text-align: center;
     font-size: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    color: #969696af;
   }
   
   .toMess .contentMess {
     background-color: #e94057;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
     margin: 10px;
     width: fit-content;
     height: fit-content;
+    max-width: 30%;
   }
   
   .toMess .contentMess p {
     display: contents;
     font-size: 15px;
+    word-wrap: break-word;
     color: #ffffff;
   }
   
   /* Text */
   
   .chatMess {
-    width: 1000px;
+    width: 55%;
     padding: 10px;
     margin-top: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 15px;
     background-color: #ededed;
-    height: 55vh;
+    height: 75vh;
     position: fixed;
     overflow: auto;
   /* Tạo scroll từ dưới lên */
@@ -182,17 +184,16 @@
   /* Thẻ .textMess nằm trong .chatMess */
   .textMess {
     display: flex;
-    position: fixed;
-    width: 1000px;
+    width: 55%;
     height: 6vh;
     align-items: center;
     justify-content: center;
-    bottom: 0;
     border: 1px solid #ededed;
     background-color: #ededed;
-    margin-bottom: 10vh;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: fixed;
+    bottom: 4rem;
   }
   
   
@@ -200,12 +201,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50%;
+      width: 80%;
       padding: 10px;
       margin: 0;
-      height: 70%;
+      height: 80%;
       background-color: #ffffff;
-      border-radius: 20px;
+      border-radius: 10px;
       border: 1px solid #C4C4C4;
   }
   

@@ -100,98 +100,87 @@ const Messages = () => {
                 <div class="fromMess">
                   <div class="imgMess">
                     <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
+                    
                   </div>
 
                   <div class="contentMess">
                     <p>Helo anh dep trai, toi nay di choi voi em khong ne`</p>
                   </div>
+                  <div class="timeMess">
+                      <p>10:00</p>
+                  </div>
                 </div>
 
                 {/* Trả lời */}
                 <div class="toMess">
-                  <div class="imgMess">
-                    <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
                   <div class="contentMess">
                     <p>Xin lỗi em nhé, anh có người yêu rồi</p>
                   </div>
+                    <div class="timeMess">
+                      <p>10:00</p>
+                    </div>
                 </div>
 
                 {/* Nhắn */}
                 <div class="fromMess">
                   <div class="imgMess">
                     <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>10:06</p>
-                    </div>
                   </div>
-
                   <div class="contentMess">
                     <p>Thế cho em làm quen anh được không ạ?</p>
                   </div>
+                  <div class="timeMess">
+                      <p>10:06</p>
+                    </div>
                 </div>
 
                 {/* Trả Lời */}
                 <div class="toMess">
-                  <div class="imgMess">
-                    <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>11:30</p>
+                    <div class="contentMess">
+                        <p>Không em nhé!</p>
                     </div>
-                  </div>
-
-                  <div class="contentMess">
-                    <p>Không em nhé!</p>
-                  </div>
+                    <div class="timeMess">
+                        <p>11:30</p>
+                    </div>
                 </div>
 
                 {/* Nhắn */}
                 <div class="fromMess">
                   <div class="imgMess">
                     <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>12:34</p>
-                    </div>
                   </div>
 
                   <div class="contentMess">
-                    <p>Sao anh hãm thế nhỉ chắc người yêu anh khổ lắm</p>
+                    <p>Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắm</p>
                   </div>
+                  <div class="timeMess">
+                      <p>12:34</p>
+                    </div>
                 </div>
 
                 {/* Trả Lời */}
                 <div class="toMess">
-                  <div class="imgMess">
-                    <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>11:30</p>
-                    </div>
-                  </div>
-
                   <div class="contentMess">
                     <p>Ừ em</p>
                   </div>
+                    <div class="timeMess">
+                      <p>11:30</p>
+                    </div>
                 </div>
 
                 {/* Nhắn */}
                 <div class="fromMess">
                   <div class="imgMess">
                     <img src={Avatar} alt="avt1" />
-                    <div class="timeMess">
-                      <p>12:34</p>
-                    </div>
+                    
                   </div>
 
                   <div class="contentMess">
                     <p>Ừ cái đmm</p>
                   </div>
+                  <div class="timeMess">
+                      <p>12:34</p>
+                    </div>
                 </div>
               </div>
               {/* textMess */}

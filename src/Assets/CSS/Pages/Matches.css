@@ -1,0 +1,73 @@
+.Title{
+    width: 100%;
+    height: 100px;
+    padding: 50px;
+    margin-left: 50px;
+}
+
+.Title h1{
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.MatchesList{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    margin: 100px;
+}
+
+.Match-Single{
+    background-color: rgba(0, 0, 0, 0.938);
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 20px;
+}
+
+.Match{
+    width: 100%;
+    height: 100px;
+    background-color: #ededed;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.Match-Group{
+    background-color: rgba(0, 0, 0, 0.822);
+    width: 110%;
+    bottom: 0;
+    margin-bottom: -10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+}
+
+.MatchInfo{
+    width: 100%;
+}
+
+.MatchInfo h5{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.MatchButtons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.MatchButtons img{
+    width: 30px;
+}
+
+.MatchButtons button{
+    background: none;
+}
+
+
