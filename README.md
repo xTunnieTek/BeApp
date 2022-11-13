@@ -3,10 +3,10 @@
 
 ## Contributors
 
-- Đức Mỹ | **MyPD
-- Văn Mạnh | **ManhNV
-- Quốc Huy | **HuyNQ
-- Công Tuấn | **TuanQC
+- Đức Mỹ | <b>MyPD</b>
+- Văn Mạnh | <b>ManhNV</b>
+- Quốc Huy | <b>HuyNQ</b>
+- Công Tuấn | <b>TuanQC</b>
 
 ## Tech
   * ReactJS
