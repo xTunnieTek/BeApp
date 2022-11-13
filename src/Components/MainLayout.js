@@ -1,27 +1,20 @@
-import {Layout} from 'antd';
-import React from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import React from "react";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import "../Assets/CSS/MainLayout.css";
 
-const {Content} = Layout;
-
-
-function MainLayout({children}) {
+function MainLayout({ children }) {
   return (
-    <Layout>
+    <>
+      <div className="main-layout">
         <Header></Header>
-    <Layout>
-      <Sidebar></Sidebar>
-    <Layout>
-      <Content>
-        {children}
-      </Content>
-    </Layout>
-    </Layout>
-  </Layout>
-
-
-  )
+        <div className="main-content">
+          <Sidebar></Sidebar>
+          <div>{children}</div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default MainLayout
+export default MainLayout;
