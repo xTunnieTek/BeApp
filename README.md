@@ -19,6 +19,9 @@
       npm i react-router-dom
       npm install antd
 
+## Usage Branch
+      git checkout -b <branch>
+      
 
 ## Import 
-  import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+      import 'antd/dist/antd.css';
