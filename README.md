@@ -1,12 +1,12 @@
 # BEDATING
 
 
-## Đây Là BeDating - Đang phát triển 
+## Contributors
 
-- Đức Mỹ = MyPD
-- Văn Mạnh = ManhNV
-- Quốc Huy = HuyNQ
-- Công Tuấn = TuanQC
+- Đức Mỹ | **MyPD
+- Văn Mạnh | **ManhNV
+- Quốc Huy | **HuyNQ
+- Công Tuấn | **TuanQC
 
 ## Tech
   * ReactJS
@@ -14,7 +14,7 @@
   * NodeJS/ExpressJS
   
 ## Installation
-      git clone https://github.com/xTunnieTek/BeApp
+      git clone https://github.com/xTunnieTek/BeApp.git
       npm update
       npm i react-router-dom
       npm install antd
