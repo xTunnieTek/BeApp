@@ -1,19 +1,14 @@
-import { useCallback } from "react";
+
 import "../Assets/CSS/Pages/Pre-Profile.css";
 import Header from "../Components/Header";
 import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
 import {
   Form,
   Input,
   Button,
   Radio,
   Select,
-  Cascader,
   DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
   Upload,
 } from 'antd';
 import ImgCrop from 'antd-img-crop';
@@ -21,9 +16,8 @@ import ImgCrop from 'antd-img-crop';
 import { useNavigate } from "react-router-dom";
 
 const PreProfile = () => {
-    const { RangePicker } = DatePicker;
     const { TextArea } = Input;
-      const [componentDisabled, setComponentDisabled] = useState(true);
+      const [setComponentDisabled] = useState(true);
       const onFormLayoutChange = ({ disabled }) => {
         setComponentDisabled(disabled);
       };
