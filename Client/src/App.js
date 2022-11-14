@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Messages from './Pages/Messages';
 import Matches from './Pages/Matches';
 import Global from './Pages/Global';
+import Login from './Pages/Login';
 import Notification from './Pages/Notification';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
         <Router>
           <Routes>
+          <Route path="/login" element={<Login/>} />
             <Route path="/" element={<Home/>} />
             <Route path="/home" element={<Home/>} />
             <Route path="/messages" element={<Messages/>} />

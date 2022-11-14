@@ -1,0 +1,59 @@
+
+.login{
+    /* background-image: url('https://media.zicxa.com/1092758') ; */
+    background-image: url('../../Images/BeApp.png') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContainer img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.loginContainer h1, .loginContainer h4{
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.loginText{
+    margin-top: -50px;
+    padding: 5%;
+    margin-bottom: 10px;
+}
+
+.btn-Login{
+    background-color: #E94057;
+    color: #FFFFFF;
+    width: 300px;
+    padding: 3%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Empty{
+    width: 100%;
+}
+
+i
+{
+    font-size: 20px;
+    margin: 10px;
+}
