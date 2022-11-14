@@ -2,7 +2,7 @@ import MainLayout from "../Components/MainLayout"
 import '../Assets/CSS/Pages/Premium.css'
 
 function Premium() {
-    
+
   return (
     <MainLayout>
         <div className="Premium">
