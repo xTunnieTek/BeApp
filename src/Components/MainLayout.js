@@ -12,12 +12,13 @@ function MainLayout({ children }) {
           <Sidebar></Sidebar>
           <div className="main-content" 
             Style="
+              background-color:blue;
               width: 100%;
               padding: 10px;
               height: 100vh;
               display: flex;
               flex-direction: column;
-              "
+              align-items: center;"
             >
             <div>{children}</div>
           </div>
