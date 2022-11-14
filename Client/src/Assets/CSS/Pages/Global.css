@@ -1,0 +1,178 @@
+.Global{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+.myPost{
+    width: 500px;
+    background-color: #FCFCFC;
+    border: 1px solid #E94057;
+    border-radius: 10px;
+    display: block;
+    position: fixed;
+    top: 0;
+    margin-top: 100px;
+}
+
+
+.Info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.Info .Avatar img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.Info .Name{
+    font-size: 15px;
+    padding: 10px;
+}
+
+.Info .Name h3{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Info .Name button{
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+/* tile uploaded pictures */
+.upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-right: 8px;
+  }
+  
+  .upload-list-inline [class*='-upload-list-rtl'] .ant-upload-list-item {
+    float: right;
+  }
+
+.ant-modal-content{
+    border-radius: 20px !important;
+}
+
+
+.ant-modal-body{
+    padding: 10px !important;
+}
+
+.ant-modal-header{
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.ShowModal .Avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 5px;
+}
+
+.ShowModal .Name{
+    font-size: 15px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.ShowModal{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+textarea{
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.NewFeed{
+    margin-top: 30px;
+    width: 500px;
+    border-radius: 15px;
+    margin-top: 200%; 
+    /* 10:45 */
+    margin-bottom: 50%;
+    /* 10:45 */
+    /* overflow: auto;
+    height: 75vh; */
+}
+
+.NewFeed .Post{
+    padding: 15px;
+    display: flex;
+    background-color: #FCFCFC;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    flex-direction: column
+}
+
+.NewFeed .Info h3, .NewFeed .Info p{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+
+.NewFeed .Image img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.NewFeed .Action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.NewFeed .Action img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.NewFeed .Action button{
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #e94057 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #e94057;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+  }

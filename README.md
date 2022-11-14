@@ -32,6 +32,6 @@
 <p>
 Chúng tôi lựa chọn ngôn ngữ lập trình ReactJS và cơ sở dữ liệu MongoDB để phát triển dự án này. Trong dự án này chúng tôi sẽ sử dụng framework để hỗ trợ cho quá trình phát triển của giao diện UX/UI là <a href="https://ant.design/">AntDesign</a>. Đối với từng nhiệm vụ và chức năng riêng của dự án. Chúng tôi phát triển dựa trên những tính năng trong báo cáo SRS mà chúng tôi đã trình bày.
  
- / * EngSub */
+/ * EngSub */ <br>
 We choose ReactJS programming language and MongoDB database to develop this project. In this project we will use the framework to support the development of the UX/UI interface, which is <a href="https://ant.design/">AntDesign</a>. For each specific task and function of the project. We built on the features in the SRS report that we showed.
 </p>
