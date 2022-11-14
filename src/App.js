@@ -5,6 +5,8 @@ import Home from './Pages/Home';
 import Messages from './Pages/Messages';
 import Matches from './Pages/Matches';
 import Global from './Pages/Global';
+import Premium from './Pages/Premium';
+import Payment from './Pages/Payment';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
             <Route path="/messages" element={<Messages/>} />
             <Route path="/matches" element={<Matches/>} />
             <Route path="/global" element={<Global/>} />
+            <Route path="/premium" element={<Premium/>} />
+            <Route path="/payment" element={<Payment/>} />
           </Routes>
         </Router>
     </div>
