@@ -54,7 +54,7 @@ exports.updateMe = async (req, res, next) => {
   const user = await User.findOneAndUpdate(
     { email },
     { name, gender, dob, gender_interest, about, address },
-    {new:true}
+    { new: true }
   );
 
   if (!user) {
@@ -68,5 +68,23 @@ exports.updateMe = async (req, res, next) => {
     data: {
       data: user,
     },
+  });
+};
+
+exports.getGenderInterestUser = async (req, res, next) => {
+  const gender = req.query.gender;
+  const users = await User.find({ gender });
+  return res.status(200).json({
+    status: "success",
+    users,
+  });
+};
+
+exports.getAllMatches = async (req, res, next) => {
+  const id = req.query.id;
+  const users = await User.find({ matches: id });
+  return res.status(200).json({
+    status: "success",
+    users,
   });
 };
