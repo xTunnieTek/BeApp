@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import MainLayout from '../Components/MainLayout'
 import '../Assets/CSS/Pages/Notification.css'
 import User1 from '../Assets/Images/Match/User1.jpeg'
@@ -7,7 +6,7 @@ import User2 from '../Assets/Images/Match/User2.jpeg'
 
 
 
-function Home() {
+function Notification() {
   return (
     <MainLayout>
         <div className="noti">
@@ -27,4 +26,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Notification
