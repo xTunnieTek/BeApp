@@ -8,20 +8,20 @@ function MainLayout({ children }) {
     <>
       <div className="main-layout">
         <Header></Header>
-        <Sidebar></Sidebar>
-        <div className="main-content" 
-          Style="
-            width: 1570px;
-            padding: 10px;
-            height: 100vh;
-            left: 350px;
-            top: 80px;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;"
-          >
-          <div>{children}</div>
+        <div className="sidebar-content" >
+          <Sidebar></Sidebar>
+          <div className="main-content" 
+            Style="
+              background-color:blue;
+              width: 100%;
+              padding: 10px;
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              align-items: center;"
+            >
+            <div>{children}</div>
+          </div>
         </div>
       </div>
     </>
