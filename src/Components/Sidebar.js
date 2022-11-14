@@ -26,12 +26,12 @@ const Sidebar = () => {
     return (
         <div class="Sidebar">
             <div class="profile">
-                <a href="#matches" id="matches"><img className="avatar" src={Avatar} /></a>
+                <a href="#"><img className="avatar" src={Avatar} /></a>
                 <h3>Ánh Ngọc, 18</h3>
             </div>
             <div class="match">
                 <div class="images">
-                    <img src={Avatar} />
+                    <img id="matches" onClick={addActiveClass} src={Avatar} />
                 </div>
             </div>
             <div class="menu">
