@@ -109,8 +109,8 @@ function Matches() {
                   <div className="Match" 
                   style={{backgroundImage: `url(${Avatar})`, 
                   backgroundSize: "cover",
-                  // opacity: "0.2",
-                  // filter: "blur(10px)",
+                  opacity: "0.2",
+                  filter: "blur(10px)",
                   height: "300px",
                   backgroundPosition: "center"}}>
                       <div className="MatchInfo">
@@ -131,8 +131,8 @@ function Matches() {
                   <div className="Match" 
                   style={{backgroundImage: `url(${Avatar})`, 
                   backgroundSize: "cover",
-                  // opacity: "0.2",
-                  // filter: "blur(10px)",
+                  opacity: "0.2",
+                  filter: "blur(10px)",
                   height: "300px",
                   backgroundPosition: "center"}}>
                       <div className="MatchInfo">

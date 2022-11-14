@@ -172,14 +172,24 @@ const Messages = () => {
                 <div class="fromMess">
                   <div class="imgMess">
                     <img src={Avatar} alt="avt1" />
-                    
                   </div>
-
                   <div class="contentMess">
                     <p>Ừ cái đmm</p>
                   </div>
                   <div class="timeMess">
                       <p>12:34</p>
+                    </div>
+                </div>
+
+                {/* Trả Lời */}
+                <div class="toMess">
+                    <div class="contentMess">
+                        <p>Anh xin lỗi nhé! Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắm
+                        Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắm
+                        Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắm</p>
+                    </div>
+                    <div class="timeMess">
+                        <p>11:30</p>
                     </div>
                 </div>
               </div>

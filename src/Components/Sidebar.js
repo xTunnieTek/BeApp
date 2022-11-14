@@ -26,9 +26,8 @@ const Sidebar = () => {
     return (
         <div class="Sidebar">
             <div class="profile">
-                <a href="#"><img className="avatar" src={Avatar} /></a>
+                <a href="#matches" id="matches"><img className="avatar" src={Avatar} /></a>
                 <h3>Ánh Ngọc, 18</h3>
-                <button><img className="iconLogout" src={Logout}/></button>
             </div>
             <div class="match">
                 <div class="images">
@@ -42,6 +41,7 @@ const Sidebar = () => {
                 <button className={`${active === 'global' ? 'selected' : ''}`} id="global" onClick={addActiveClass}><img src={Global}/> <h3>#Global</h3></button>
                 <button className={`${active === 'support' ? 'selected' : ''}`} id="support" onClick={addActiveClass}><img src={Support}/> <h3>#Support</h3></button>
                 <button className={`${active === 'premium' ? 'selected' : ''}`} id="premium" onClick={addActiveClass}><img src={Setting}/> <h3>#Setting</h3></button>
+                <button className={`${active === 'logout' ? 'selected' : ''}`} id="logout" onClick={addActiveClass}><img src={Logout}/> <h3>#Logout</h3></button>
             </div>
         </div>
      );

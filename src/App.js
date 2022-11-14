@@ -4,7 +4,7 @@ import MainLayout from './Components/MainLayout';
 import Home from './Pages/Home';
 import Messages from './Pages/Messages';
 import Matches from './Pages/Matches';
-// import Global from './Pages/Global';
+import Global from './Pages/Global';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
             <Route path="/home" element={<Home/>} />
             <Route path="/messages" element={<Messages/>} />
             <Route path="/matches" element={<Matches/>} />
-            {/* <Route path="/global" element={<Global/>} /> */}
+            <Route path="/global" element={<Global/>} />
           </Routes>
         </Router>
     </div>

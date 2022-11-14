@@ -13,7 +13,7 @@
 .MatchesList{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 20px;
+    grid-gap: 50px;
     margin: 100px;
 }
 
@@ -37,12 +37,13 @@
 
 .Match-Group{
     background-color: rgba(0, 0, 0, 0.822);
-    width: 110%;
+    width: 117%;
     bottom: 0;
     margin-bottom: -10px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 10px;
+    /* 10:50 */
 }
 
 .MatchInfo{
