@@ -24,17 +24,17 @@ const Sidebar = () => {
     }
 
     return (
-        <div class="Sidebar">
-            <div class="profile">
+        <div className="Sidebar">
+            <div className="profile">
                 <a href="#"><img className="avatar" src={Avatar} /></a>
                 <h3>Ánh Ngọc, 18</h3>
             </div>
-            <div class="match">
-                <div class="images">
+            <div className="match">
+                <div className="images">
                     <img id="matches" onClick={addActiveClass} src={Avatar} />
                 </div>
             </div>
-            <div class="menu">
+            <div className="menu">
                 <button className={`${active === 'home' ? 'selected' : ''}`} id="home" onClick={addActiveClass}><img src={Home}/> <h3 className={`${active === 'home' ? 'selected' : ''}`} id="home" onClick={addActiveClass}>#Home</h3></button>
                 <button className={`${active === 'messages' ? 'selected' : ''}`} id="messages" onClick={addActiveClass} ><img src={Messages}/> <h3>#Messages</h3></button>
                 <button className={`${active === 'profile' ? 'selected' : ''}`} id="profile" onClick={addActiveClass}><img src={Profile}/> <h3>#Profile</h3></button>

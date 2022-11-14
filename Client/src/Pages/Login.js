@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../Assets/CSS/Pages/Login.css'
 import Bgr from '../Assets/Images/BeApp.png'
-import Icon from '../Assets/Images/icon.png'
+import Icon from '../Assets/SVG/B.svg'
 
 
 
