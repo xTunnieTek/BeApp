@@ -11,8 +11,10 @@ import Support from "../Assets/SVG/support.svg";
 import Setting from "../Assets/SVG/settings.svg";
 import axios from "axios";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  let navigate = useNavigate();
   const [active, setActive] = useState("");
   const auth = getAuth();
   const [user, setUser] = React.useState([]);
@@ -42,6 +44,10 @@ const Sidebar = () => {
       window.location.href = clicked || "404";
     }
   };
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+  }
 
   return (
     <div className="Sidebar">
@@ -100,9 +106,19 @@ const Sidebar = () => {
           <img src={Support} /> <h3>#Support</h3>
         </button>
         <button
-          className={`${active === "logout" ? "selected" : ""}`}
-          id="logout"
+<<<<<<< HEAD
+=======
+          className={`${active === "premium" ? "selected" : ""}`}
+          id="premium"
           onClick={addActiveClass}
+        >
+          <img src={Setting} /> <h3>#Premium</h3>
+        </button>
+        <button
+>>>>>>> fdcf6ab339412340ebaf419c7c3499dc4ac350b4
+          className={`${active === "logout" ? "selected" : ""}`}
+          id="login"
+          onClick={logout}
         >
           <img src={Logout} /> <h3>#Logout</h3>
         </button>
