@@ -15,7 +15,6 @@ import { getAuth } from "firebase/auth";
 const Sidebar = () => {
   const [active, setActive] = useState("");
   const auth = getAuth();
-  console.log(auth);
   const [user, setUser] = React.useState([]);
   const [userImg, setUserImg] = React.useState(DefaultImage);
   const userId = localStorage.getItem("UserId");
@@ -99,13 +98,6 @@ const Sidebar = () => {
           onClick={addActiveClass}
         >
           <img src={Support} /> <h3>#Support</h3>
-        </button>
-        <button
-          className={`${active === "premium" ? "selected" : ""}`}
-          id="premium"
-          onClick={addActiveClass}
-        >
-          <img src={Setting} /> <h3>#Setting</h3>
         </button>
         <button
           className={`${active === "logout" ? "selected" : ""}`}

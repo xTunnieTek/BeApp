@@ -19,11 +19,9 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 50px;
-    overflow: auto;
     margin-top: 20px;
     margin-bottom: 50%;
     padding: 10px;
-    height: 700px;
 }
 
 .Match-Single{
