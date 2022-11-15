@@ -49,6 +49,7 @@ exports.login = async (req, res, next) => {
 };
 
 exports.updateMe = async (req, res, next) => {
+  console.log(req.body);
   const email = req.body.email;
   const { name, gender, dob, gender_interest, about, address } = req.body;
   const user = await User.findOneAndUpdate(

@@ -7,6 +7,10 @@ import Matches from "./Pages/Matches";
 import Global from "./Pages/Global";
 import Login from "./Pages/Login";
 import Notification from "./Pages/Notification";
+import Profile from "./Pages/Profile";
+import Welcome from "./Pages/Welcome";
+import Premium from "./Pages/Premium";
+import Payment from "./Pages/Payment";
 
 function App() {
   return (
@@ -14,11 +18,14 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Welcome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/matches" element={<Matches />} />
           <Route path="/global" element={<Global />} />
+          <Route path="/premium" element={<Premium />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/notification" element={<Notification />} />
         </Routes>
       </Router>
