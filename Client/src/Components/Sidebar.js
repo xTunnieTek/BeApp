@@ -1,6 +1,7 @@
 import "../Assets/CSS/MainLayout.css";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "../Assets/Images/Avatar/avatar.jpg";
+import DefaultImage from "../Assets/Images/Avatar/default-user-img.png"
 import Logout from "../Assets/SVG/Logout.svg";
 import Home from "../Assets/SVG/home.svg";
 import Messages from "../Assets/SVG/messages.svg";
@@ -8,33 +9,59 @@ import Profile from "../Assets/SVG/profile.svg";
 import Global from "../Assets/SVG/global.svg";
 import Support from "../Assets/SVG/support.svg";
 import Setting from "../Assets/SVG/settings.svg";
+import axios from "axios";
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-    const [active,setActive] = useState('');
-    // Set the active state to the clicked button and selected the active class
-    const addActiveClass = (e) => {
-        const clicked = e.target.id;
-        if(active === clicked) {
-            setActive(clicked);
-        } 
-        else {
-            setActive(clicked);
-            window.location.href = clicked || '404';
-        }
+  let navigate = useNavigate();
+  const [active, setActive] = useState("");
+  const auth = getAuth();
+  console.log(auth);
+  const [user, setUser] = React.useState([]);
+  const [userImg, setUserImg] = React.useState(DefaultImage);
+  const userId = localStorage.getItem("UserId");
+  const getUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/users/user", {
+        params: { userId },
+      });
+      setUser(response.data.user);
+    } catch (error) {
+      console.log(error);
     }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+  // Set the active state to the clicked button and selected the active class
+  const addActiveClass = (e) => {
+    const clicked = e.target.id;
+    if (active === clicked) {
+      setActive(clicked);
+    } else {
+      setActive(clicked);
+      window.location.href = clicked || "404";
+    }
+  };
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+  }
 
     return (
-        <div className="Sidebar">
-            <div className="profile">
+        <div class="Sidebar">
+            <div class="profile">
                 <a href="#"><img className="avatar" src={Avatar} /></a>
                 <h3>Ánh Ngọc, 18</h3>
             </div>
-            <div className="match">
-                <div className="images">
+            <div class="match">
+                <div class="images">
                     <img id="matches" onClick={addActiveClass} src={Avatar} />
                 </div>
             </div>
-            <div className="menu">
+            <div class="menu">
                 <button className={`${active === 'home' ? 'selected' : ''}`} id="home" onClick={addActiveClass}><img src={Home}/> <h3 className={`${active === 'home' ? 'selected' : ''}`} id="home" onClick={addActiveClass}>#Home</h3></button>
                 <button className={`${active === 'messages' ? 'selected' : ''}`} id="messages" onClick={addActiveClass} ><img src={Messages}/> <h3>#Messages</h3></button>
                 <button className={`${active === 'profile' ? 'selected' : ''}`} id="profile" onClick={addActiveClass}><img src={Profile}/> <h3>#Profile</h3></button>

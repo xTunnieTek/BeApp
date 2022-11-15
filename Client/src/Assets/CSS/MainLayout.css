@@ -19,7 +19,6 @@
 }
 body{
     overflow: hidden;
-
 }
 
 header{
@@ -133,7 +132,6 @@ header .menu-icon{
 }
 
 .Sidebar .menu{
-    margin-top: 30px;
     padding: 10px;
     display: flex;
     align-items: center;
