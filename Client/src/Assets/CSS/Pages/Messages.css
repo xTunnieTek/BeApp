@@ -1,0 +1,254 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1570px;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto;
+}
+
+.Container .container-fluid {
+  width: 100%;
+  height: 80vh;
+  padding-left: 50px;
+}
+
+.headMess {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #ededed;
+  border-radius: 30px;
+}
+
+.listMess {
+  width: 100%;
+  background-color: #ededed;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  height: 75vh;
+  overflow: auto;
+}
+
+.headMess img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.headMess input {
+  width: 80%;
+  padding: 5px;
+  border: none;
+  background-color: #ededed;
+  outline: none;
+}
+
+.headMess input:focus {
+  border: none;
+  outline: none;
+}
+
+.userMess img {
+  width: 60%;
+  height: 90%;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.userMess {
+  display: flex;
+  align-items: center;
+}
+
+
+.userMess p {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.userMess h5 {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* timeMess in userMess flex right */
+
+.userMess .timeMess {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.userMess .timeMess p {
+  font-weight: 600;
+}
+
+.userMess .infoMess p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 160px;
+}
+
+/* FROMMMMM */
+
+.fromMess {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline
+}
+
+.fromMess img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.fromMess .timeMess {
+  text-align: center;
+  font-size: 12px;
+  /* font-weight: bold; */
+  color: #969696af;
+}
+
+.fromMess .contentMess {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 30%;
+}
+
+.fromMess .contentMess p {
+  font-size: 15px;
+  display: contents;
+  word-wrap: break-word;
+
+}
+
+/* ====== */
+.toMess {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  align-items: baseline;
+}
+
+.toMess .timeMess {
+  text-align: center;
+  font-size: 12px;
+  /* font-weight: bold; */
+  color: #969696af;
+}
+
+.toMess .contentMess {
+  background-color: #e94057;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 30%;
+}
+
+.toMess .contentMess p {
+  display: contents;
+  font-size: 15px;
+  word-wrap: break-word;
+  color: #ffffff;
+}
+
+/* Text */
+
+.chatMess {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #ededed;
+  height: 69vh;
+  /* position: fixed; */
+  overflow: auto;
+/* Tạo scroll từ dưới lên */
+
+}
+
+/* Thẻ .textMess nằm trong .chatMess */
+.textMess {
+  display: flex;
+  width: 95%;
+  height: 6vh;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ededed;
+  background-color: #ededed;
+  position: sticky;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  bottom: 3.5rem;
+}
+
+
+.controlMess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 10px;
+    margin: 0;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+}
+
+.controlMess img{
+    width: 100%;
+    height: 100%;
+}
+
+.controlMess .btnMess{
+    display: flex;
+    width: 10%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.controlMess .inputMess{
+    width: 80%;
+    height: 100%;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.controlMess .fileMess{
+    width: 10%;
+    height: 100%;
+    border: none;
+    background-color: #ffffff;
+}
+
+.fileMess::-webkit-file-upload-button {
+  visibility: hidden;
+  position: none;
+  margin-left: 30px;
+}
+
+.fileMess img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #ffffff;
+}

@@ -1,0 +1,62 @@
+.noti{
+    padding: 50px;
+    display: flex;
+    justify-content: center
+}
+
+
+.noti img{
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+.user1{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    margin-right: -10%;
+    margin-top: 25%;
+}
+
+.user1 img{
+    transform: rotate(-15deg);
+}
+
+.user2 img{
+    transform: rotate(15deg);
+}
+
+.user2{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    margin-left: -10%;
+}
+
+.text h5{
+    text-align: center;
+    color: #E94057;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.text p{
+    text-align: center;
+}
+
+.btn-Say{
+    width: 300px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #E94057;
+    color: #ffffff;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
