@@ -69,11 +69,6 @@ const Sidebar = () => {
                 <button className={`${active === 'premium' ? 'selected' : ''}`} id="premium" onClick={addActiveClass}><img src={Setting}/> <h3>#Setting</h3></button>
                 <button className={`${active === 'logout' ? 'selected' : ''}`} id="logout" onClick={addActiveClass}><img src={Logout}/> <h3>#Logout</h3></button>
             </div>
-        </div>
-<<<<<<< HEAD
-     );
-=======
-      </div>
       <div className="menu">
         <button
           className={`${active === "home" ? "selected" : ""}`}
@@ -118,8 +113,6 @@ const Sidebar = () => {
           <img src={Support} /> <h3>#Support</h3>
         </button>
         <button
-<<<<<<< HEAD
-=======
           className={`${active === "premium" ? "selected" : ""}`}
           id="premium"
           onClick={addActiveClass}
@@ -127,7 +120,6 @@ const Sidebar = () => {
           <img src={Setting} /> <h3>#Premium</h3>
         </button>
         <button
->>>>>>> fdcf6ab339412340ebaf419c7c3499dc4ac350b4
           className={`${active === "logout" ? "selected" : ""}`}
           id="login"
           onClick={logout}
@@ -135,9 +127,9 @@ const Sidebar = () => {
           <img src={Logout} /> <h3>#Logout</h3>
         </button>
       </div>
-    </div>
+      
+      </div>
   );
->>>>>>> fc5e79d75b523a1d73660af7c10546c22de6abe1
 };
 
 export default Sidebar;
