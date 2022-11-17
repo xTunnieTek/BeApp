@@ -1,7 +1,11 @@
+.main-content{
+    align-items: center !important;
+}
+
 .Matches{
     margin: 50px;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .Title{

@@ -85,8 +85,8 @@ const Sidebar = () => {
           <img src={Messages} /> <h3>#Messages</h3>
         </button>
         <button
-          className={`${active === "profile" ? "selected" : ""}`}
-          id="profile"
+          className={`${active === "myprofile" ? "selected" : ""}`}
+          id="myprofile"
           onClick={addActiveClass}
         >
           <img src={Profile} /> <h3>#Profile</h3>
@@ -106,8 +106,6 @@ const Sidebar = () => {
           <img src={Support} /> <h3>#Support</h3>
         </button>
         <button
-<<<<<<< HEAD
-=======
           className={`${active === "premium" ? "selected" : ""}`}
           id="premium"
           onClick={addActiveClass}
@@ -115,7 +113,6 @@ const Sidebar = () => {
           <img src={Setting} /> <h3>#Premium</h3>
         </button>
         <button
->>>>>>> fdcf6ab339412340ebaf419c7c3499dc4ac350b4
           className={`${active === "logout" ? "selected" : ""}`}
           id="login"
           onClick={logout}

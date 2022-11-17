@@ -78,14 +78,6 @@ const Profile = () => {
           const [about,setAbout] = useState('');
           const [address,setAddress] = useState('');
           const email = user.email;
-        
-               
-
-
-
-
-          
-
   return (
     <div className="profile-detail-div">
         <Header />

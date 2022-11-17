@@ -8,6 +8,7 @@ import Global from "./Pages/Global";
 import Login from "./Pages/Login";
 import Notification from "./Pages/Notification";
 import Profile from "./Pages/Profile";
+import MyProfile from "./Pages/MyProfile";
 import Welcome from "./Pages/Welcome";
 import Premium from "./Pages/Premium";
 import Payment from "./Pages/Payment";
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/" element={<Welcome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/messages" element={<Messages />} />

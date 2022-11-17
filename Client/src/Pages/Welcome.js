@@ -10,12 +10,14 @@ const Welcome = () => {
     useEffect(()=>{
         setTimeout(()=>{
         navigate('/login')
-        },3000)
+        },5000)
     })
     const antIcon = (
         <LoadingOutlined
             style={{
-            fontSize: 50,
+            fontSize: 100,
+            color: '#E94057',
+            fontWeight: 'bold',
             }}
             spin
         />

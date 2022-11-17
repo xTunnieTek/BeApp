@@ -389,10 +389,9 @@ function Matches() {
                   </div>
                 </div>
                 {/* End Match 1 */}
-          
-               
+               </div>
             </div>
-          ))}
+            ))}
         </div>
       </div>
     </MainLayout>
