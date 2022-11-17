@@ -32,7 +32,6 @@ function Card() {
           params: { gender: user?.gender_interest },
         }
       );
-      console.log(response);
       setGenderedUsers(response.data.users);
       console.log("gendered users", genderedUsers);
     } catch (error) {
@@ -81,22 +80,17 @@ function Card() {
     }
   };
 
-  // set last direction and decrease current index
   const swiped = (direction, swipedUserId, index) => {
     setLastDirection(direction);
     updateCurrentIndex(index - 1);
     if (direction === "right") {
-      // updateMatches(swipedUserId);
+      updateMatches(swipedUserId);
       console.log(swipedUserId);
     }
   };
 
   const outOfFrame = (name, idx) => {
-    // handle the case in which go back is pressed before card goes outOfFrame
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
-    // TODO: when quickly swipe and restore multiple times the same card,
-    // it happens multiple outOfFrame events are queued and the card disappear
-    // during latest swipes. Only the last outOfFrame event should be considered valid
   };
 
   const swipe = async (dir) => {

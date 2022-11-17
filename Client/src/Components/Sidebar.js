@@ -17,7 +17,6 @@ const Sidebar = () => {
   let navigate = useNavigate();
   const [active, setActive] = useState("");
   const auth = getAuth();
-  console.log(auth);
   const [user, setUser] = React.useState([]);
   const [userImg, setUserImg] = React.useState(DefaultImage);
   const userId = localStorage.getItem("UserId");
@@ -71,7 +70,74 @@ const Sidebar = () => {
                 <button className={`${active === 'logout' ? 'selected' : ''}`} id="logout" onClick={addActiveClass}><img src={Logout}/> <h3>#Logout</h3></button>
             </div>
         </div>
+<<<<<<< HEAD
      );
+=======
+      </div>
+      <div className="menu">
+        <button
+          className={`${active === "home" ? "selected" : ""}`}
+          id="home"
+          onClick={addActiveClass}
+        >
+          <img src={Home} />{" "}
+          <h3
+            className={`${active === "home" ? "selected" : ""}`}
+            id="home"
+            onClick={addActiveClass}
+          >
+            #Home
+          </h3>
+        </button>
+        <button
+          className={`${active === "messages" ? "selected" : ""}`}
+          id="messages"
+          onClick={addActiveClass}
+        >
+          <img src={Messages} /> <h3>#Messages</h3>
+        </button>
+        <button
+          className={`${active === "profile" ? "selected" : ""}`}
+          id="profile"
+          onClick={addActiveClass}
+        >
+          <img src={Profile} /> <h3>#Profile</h3>
+        </button>
+        <button
+          className={`${active === "global" ? "selected" : ""}`}
+          id="global"
+          onClick={addActiveClass}
+        >
+          <img src={Global} /> <h3>#Global</h3>
+        </button>
+        <button
+          className={`${active === "support" ? "selected" : ""}`}
+          id="support"
+          onClick={addActiveClass}
+        >
+          <img src={Support} /> <h3>#Support</h3>
+        </button>
+        <button
+<<<<<<< HEAD
+=======
+          className={`${active === "premium" ? "selected" : ""}`}
+          id="premium"
+          onClick={addActiveClass}
+        >
+          <img src={Setting} /> <h3>#Premium</h3>
+        </button>
+        <button
+>>>>>>> fdcf6ab339412340ebaf419c7c3499dc4ac350b4
+          className={`${active === "logout" ? "selected" : ""}`}
+          id="login"
+          onClick={logout}
+        >
+          <img src={Logout} /> <h3>#Logout</h3>
+        </button>
+      </div>
+    </div>
+  );
+>>>>>>> fc5e79d75b523a1d73660af7c10546c22de6abe1
 };
 
 export default Sidebar;

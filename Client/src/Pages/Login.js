@@ -1,10 +1,11 @@
-import React from 'react'
-
-import '../Assets/CSS/Pages/Login.css'
-import Bgr from '../Assets/Images/BeApp.png'
-import Icon from '../Assets/Images/icon.png'
-
-
+import React from "react";
+import axios from "axios";
+import {authentication} from '../firebase-config';
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import "../Assets/CSS/Pages/Login.css";
+import Icon from "../Assets/Images/icon.png";
 
 function Login() {
   let navigate = useNavigate();
