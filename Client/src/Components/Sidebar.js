@@ -9,6 +9,7 @@ import Global from "../Assets/SVG/global.svg";
 import Support from "../Assets/SVG/support.svg";
 import Setting from "../Assets/SVG/settings.svg";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const Sidebar = () => {
     const [active,setActive] = useState('');
@@ -23,6 +24,8 @@ const Sidebar = () => {
             window.location.href = clicked || '404';
         }
 =======
+=======
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
 import axios from "axios";
 import { getAuth } from "firebase/auth";
 

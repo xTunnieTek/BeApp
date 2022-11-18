@@ -19,11 +19,14 @@ import Global from "./Pages/Global";
 import Login from "./Pages/Login";
 import Notification from "./Pages/Notification";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Profile from "./Pages/Profile";
 import Welcome from "./Pages/Welcome";
 import Premium from "./Pages/Premium";
 import Payment from "./Pages/Payment";
 >>>>>>> parent of 296e157c (Tuấn Update Profile)
+=======
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
 =======
 >>>>>>> parent of fdcf6ab3 (huy hom nay)
 
