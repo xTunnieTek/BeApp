@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const multer = require("multer");
+const path = require('path');
 
 exports.getUser = async (req, res, next) => {
   const id = req.query.userId;
@@ -48,22 +50,43 @@ exports.login = async (req, res, next) => {
   });
 };
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "../Client/src/Assets/Images");
+  },
+  filename: (req, file, cb) => {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+exports.uploadImage = multer({
+  storage:storage
+}).single('photo');
+
 exports.updateMe = async (req, res, next) => {
+  console.log("file",req.file);
   const email = req.body.email;
+  let photo;
   const { name, gender, dob, gender_interest, about, address } = req.body;
+  if(req.file) {
+    photo = req.file.filename;
+  }
   const user = await User.findOneAndUpdate(
     { email },
-    { name, gender, dob, gender_interest, about, address },
+    { name, gender, dob, gender_interest, about, address,photo },
     { new: true }
   );
 
   if (!user) {
-    res.status(404).json({
+    return res.status(404).json({
       message: "No user found with this email",
     });
   }
 
-  res.status(200).json({
+  return res.status(200).json({
     status: "success",
     data: {
       data: user,
