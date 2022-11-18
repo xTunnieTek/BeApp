@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import welcome from '../Assets/Images/Welcome.png'
 import { useNavigate } from "react-router-dom";
@@ -42,6 +43,8 @@ const Welcome = () => {
 
 export default Welcome;
 >>>>>>> parent of 296e157c (Tuấn Update Profile)
+=======
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
 =======
 >>>>>>> parent of fdcf6ab3 (huy hom nay)
 =======
