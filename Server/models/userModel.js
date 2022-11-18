@@ -40,7 +40,11 @@ const userSchema = new Schema({
   address: {
     type: String,
   },
+  level: {
+    type: String,
+  },
   liked_by: [{ type: String, ref: "User" }],
+  posts: [{type:Schema.Types.ObjectId, ref:'Post'}]
 });
 
 const User = mongoose.model("User", userSchema);

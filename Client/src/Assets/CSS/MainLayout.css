@@ -19,7 +19,6 @@
 }
 body{
     overflow: hidden;
-
 }
 
 header{
@@ -129,11 +128,11 @@ header .menu-icon{
 }
 
 .Sidebar .match .images:hover{
+    transition: all .2s;
     transform: scale(1.1);
 }
 
 .Sidebar .menu{
-    margin-top: 30px;
     padding: 10px;
     display: flex;
     align-items: center;

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import welcome from '../Assets/Images/Welcome.png'
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -15,12 +10,14 @@ const Welcome = () => {
     useEffect(()=>{
         setTimeout(()=>{
         navigate('/login')
-        },3000)
+        },5000)
     })
     const antIcon = (
         <LoadingOutlined
             style={{
-            fontSize: 50,
+            fontSize: 100,
+            color: '#E94057',
+            fontWeight: 'bold',
             }}
             spin
         />
@@ -42,10 +39,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
->>>>>>> parent of 296e157c (Tuấn Update Profile)
-=======
->>>>>>> parent of fdcf6ab3 (huy hom nay)
-=======
->>>>>>> parent of fdcf6ab3 (huy hom nay)
-=======
->>>>>>> parent of fdcf6ab3 (huy hom nay)

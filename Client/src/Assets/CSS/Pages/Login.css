@@ -9,7 +9,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 10%;
+    padding: 5%;
 }
 
 
@@ -18,30 +18,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50%;
 }
 
 .loginContainer img{
-    margin-top: -10%;
-}
-
-.loginContainer h4{
-    font-weight: 700;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 40px;
-}
-
-.loginContainer h1{
-    font-weight: 700;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 60px;
     width: 100%;
+    object-fit: contain;
+}
+
+.loginContainer h1, .loginContainer h4{
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 .loginText{
+    margin-top: -50px;
     padding: 5%;
     margin-bottom: 10px;
 }
@@ -49,12 +40,16 @@
 .btn-Login{
     background-color: #E94057;
     color: #FFFFFF;
-    width: 400px;
-    padding: 2%;
+    width: 300px;
+    padding: 3%;
     border-radius: 10px;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+}
+
+.Empty{
+    width: 100%;
 }
 
 i

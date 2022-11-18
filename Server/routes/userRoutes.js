@@ -4,7 +4,7 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-router.patch('/update',userController.updateMe);
+router.put('/update',userController.updateMe);
 router.post('/login',userController.login);
 router.get('/user',userController.getUser);
 router.get('/gendered-users',userController.getGenderInterestUser);
