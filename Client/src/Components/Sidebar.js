@@ -8,6 +8,7 @@ import Profile from "../Assets/SVG/profile.svg";
 import Global from "../Assets/SVG/global.svg";
 import Support from "../Assets/SVG/support.svg";
 import Setting from "../Assets/SVG/settings.svg";
+<<<<<<< HEAD
 
 const Sidebar = () => {
     const [active,setActive] = useState('');
@@ -21,8 +22,29 @@ const Sidebar = () => {
             setActive(clicked);
             window.location.href = clicked || '404';
         }
+=======
+import axios from "axios";
+import { getAuth } from "firebase/auth";
+
+const Sidebar = () => {
+  const [active, setActive] = useState("");
+  const auth = getAuth();
+  console.log(auth);
+  const [user, setUser] = React.useState([]);
+  const [userImg, setUserImg] = React.useState(DefaultImage);
+  const userId = localStorage.getItem("UserId");
+  const getUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/users/user", {
+        params: { userId },
+      });
+      setUser(response.data.user);
+    } catch (error) {
+      console.log(error);
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
     }
 
+<<<<<<< HEAD
     return (
         <div className="Sidebar">
             <div className="profile">
@@ -43,6 +65,33 @@ const Sidebar = () => {
                 <button className={`${active === 'premium' ? 'selected' : ''}`} id="premium" onClick={addActiveClass}><img src={Setting}/> <h3>#Setting</h3></button>
                 <button className={`${active === 'logout' ? 'selected' : ''}`} id="logout" onClick={addActiveClass}><img src={Logout}/> <h3>#Logout</h3></button>
             </div>
+=======
+  useEffect(() => {
+    getUser();
+  }, []);
+  // Set the active state to the clicked button and selected the active class
+  const addActiveClass = (e) => {
+    const clicked = e.target.id;
+    if (active === clicked) {
+      setActive(clicked);
+    } else {
+      setActive(clicked);
+      window.location.href = clicked || "404";
+    }
+  };
+
+  return (
+    <div className="Sidebar">
+      <div className="profile">
+        <a href="#">
+          <img className="avatar" src={userImg} />
+        </a>
+        <h3>{user ? user.name : ""}</h3>
+      </div>
+      <div className="match">
+        <div className="images">
+          <img id="matches" onClick={addActiveClass} src={Avatar} />
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
         </div>
 <<<<<<< HEAD
      );
@@ -98,13 +147,13 @@ const Sidebar = () => {
           id="premium"
           onClick={addActiveClass}
         >
-          <img src={Setting} /> <h3>#Premium</h3>
+          <img src={Setting} /> <h3>#Setting</h3>
         </button>
         <button
 >>>>>>> fdcf6ab339412340ebaf419c7c3499dc4ac350b4
           className={`${active === "logout" ? "selected" : ""}`}
-          id="login"
-          onClick={logout}
+          id="logout"
+          onClick={addActiveClass}
         >
           <img src={Logout} /> <h3>#Logout</h3>
         </button>

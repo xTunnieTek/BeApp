@@ -209,6 +209,33 @@ function Matches() {
                   </div>
                 </div>
                 {/* End Match 1 */}
+<<<<<<< HEAD
+=======
+
+                {/* Match 1 */}
+                <div className="Match-Single">
+                  <div className="Match" 
+                  style={{backgroundImage: `url(${Avatar})`, 
+                  backgroundSize: "cover",
+                  // opacity: "0.2",
+                  // filter: "blur(10px)",
+                  width: "180px",
+                  height: "300px",
+                  backgroundPosition: "center"}}>
+                      <div className="MatchInfo">
+                          <h5>Anh Ngoc , 19</h5>
+                      </div>
+                      <div className="Match-Group">
+                        <div className="MatchButtons">
+                          <button><img src={Like} alt="Like" /></button>
+                            |
+                          <button><img src={Deny} alt="Deny" /></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                {/* End Match 1 */}
+>>>>>>> parent of fdcf6ab3 (huy hom nay)
 
 
                 {/* Match 1 */}
