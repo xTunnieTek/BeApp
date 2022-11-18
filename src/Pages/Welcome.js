@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import welcome from '../Assets/Images/Welcome.png'
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -39,4 +37,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
->>>>>>> parent of 296e157c (Tuấn Update Profile)

@@ -1,30 +1,8 @@
 import MainLayout from "../Components/MainLayout"
 import '../Assets/CSS/Pages/Payment.css'
-import QRCode from "../Assets/Images/qrcode.png"
-import React, { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
-import axios from "axios";
+import QRCode from "../Assets/Images/QRCode/qrcode.png"
 
 function Payment() {
-    const [active, setActive] = useState("");
-    const auth = getAuth();
-    console.log(auth);
-    const [user, setUser] = React.useState([]);
-    const userId = localStorage.getItem("UserId");
-    const getUser = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/users/user", {
-          params: { userId },
-        });
-        setUser(response.data.user);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
-    useEffect(() => {
-      getUser();
-    }, []);
 
     return(
         <MainLayout>
@@ -37,17 +15,17 @@ function Payment() {
                         <table className="table-info">
                             <tr>
                                 <th>Name</th>
-                                <td>{user ? user.name : ""}</td>
+                                <td>Nguyen Quoc Huy</td>
                             </tr>
                             <br></br>
                             <tr>
                                 <th>Email</th>
-                                <td>{user ? user.email : ""}</td>
+                                <td>huyngu@gmail.com</td>
                             </tr>
                             <br></br>
                             <tr>
                                 <th>Phone Number</th>
-                                <td>{user ? user.phone : ""}</td>
+                                <td>0123456789</td>
                             </tr>
                             <br></br>
                             <tr>

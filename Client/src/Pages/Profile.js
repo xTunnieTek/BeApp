@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import { useCallback } from "react";
 import "../Assets/CSS/Pages/Profile.css";
 import Header from "../Components/Header";
@@ -78,6 +80,14 @@ const Profile = () => {
           const [about,setAbout] = useState('');
           const [address,setAddress] = useState('');
           const email = user.email;
+        
+               
+
+
+
+
+          
+
   return (
     <div className="profile-detail-div">
         <Header />
@@ -166,3 +176,4 @@ const Profile = () => {
 };
 
 export default Profile;
+>>>>>>> parent of 296e157c (Tuấn Update Profile)

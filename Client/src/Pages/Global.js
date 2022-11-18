@@ -28,10 +28,6 @@ function Global() {
     const handleCancel = () => {
       setIsModalOpen(false);
     };
-
-    const submitPost = () => {
-        
-    }
   return (
     <MainLayout>
         <div className="Global">
@@ -64,7 +60,7 @@ function Global() {
                                 defaultFileList={[...fileList]}
                                 className="upload-list-inline"
                                 >
-                            <Button className='ant' icon={<UploadOutlined />} onSubmit={submitPost}>Upload</Button>
+                            <Button className='ant' icon={<UploadOutlined />}>Upload</Button>
                             </Upload>
                         </Modal>
                     </div>
