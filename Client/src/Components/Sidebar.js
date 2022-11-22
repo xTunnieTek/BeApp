@@ -14,7 +14,7 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [active, setActive] = useState("");
   const auth = getAuth();
   const [user, setUser] = React.useState([]);
@@ -26,6 +26,7 @@ const Sidebar = () => {
         params: { userId },
       });
       setUser(response.data.user);
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -44,16 +45,17 @@ const Sidebar = () => {
       window.location.href = clicked || "404";
     }
   };
+
   const logout = () => {
+    navigate('/login');
     localStorage.clear();
-    navigate("/login");
   }
 
   return (
     <div className="Sidebar">
       <div className="profile">
         <a href="#">
-          <img className="avatar" src={userImg} />
+          <img className="avatar" src={user.photo ? require(`../Assets/Images/${user.photo}`) : userImg} />
         </a>
         <h3>{user ? user.name : ""}</h3>
       </div>
@@ -99,22 +101,8 @@ const Sidebar = () => {
           <img src={Global} /> <h3>#Global</h3>
         </button>
         <button
-          className={`${active === "support" ? "selected" : ""}`}
-          id="support"
-          onClick={addActiveClass}
-        >
-          <img src={Support} /> <h3>#Support</h3>
-        </button>
-        <button
-          className={`${active === "premium" ? "selected" : ""}`}
-          id="premium"
-          onClick={addActiveClass}
-        >
-          <img src={Setting} /> <h3>#Premium</h3>
-        </button>
-        <button
           className={`${active === "logout" ? "selected" : ""}`}
-          id="login"
+          id="logout"
           onClick={logout}
         >
           <img src={Logout} /> <h3>#Logout</h3>

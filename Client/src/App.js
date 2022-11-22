@@ -25,18 +25,46 @@ import ASignin from "./Pages/Admin/SignIn";
 // import "antd/dist/antd.css";
 // import "./Assets/Admin/styles/main.css";
 // import "./Assets/Admin/styles/responsive.css";
+import Upload from "./Pages/Upload";
+import Chat from "./Pages/Chat";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const { currentUser } = useContext(AuthContext);
+
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/" element={<Welcome />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/upload" element={<Upload />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/messages"
+            element={
+              <ProtectedRoute>
+                <Messages />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/matches" element={<Matches />} />
           <Route path="/global" element={<Global />} />
           <Route path="/premium" element={<Premium />} />

@@ -24,6 +24,7 @@ function Login() {
         console.log(response);
         localStorage.setItem("AuthToken",response.data.token);
         localStorage.setItem("UserId",response.data.user._id);
+        localStorage.setItem("email",email);
         // if not redirect to profile page
         if(response.status === 201) {
             navigate('/profile');

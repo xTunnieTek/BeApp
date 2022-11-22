@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 
 const userRoutes = require('./routes/userRoutes');
 const swipeRoutes = require('./routes/swipeRoutes');
-const postRoutes = require('./routes/postRoutes');
-
+const messageRoutes = require('./routes/messageRoutes');
+const conversationRoutes = require('./routes/conversationRoutes');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,6 +19,7 @@ app.use(
 
 app.use("/users",userRoutes);
 app.use("/swipe",swipeRoutes);
-app.use("/posts",postRoutes);
+app.use("/conversations",conversationRoutes);
+app.use("/messages",messageRoutes);
 
 module.exports = app;
