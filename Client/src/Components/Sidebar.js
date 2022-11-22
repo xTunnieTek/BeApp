@@ -11,11 +11,12 @@ import Support from "../Assets/SVG/support.svg";
 import Setting from "../Assets/SVG/settings.svg";
 import axios from "axios";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState("");
   const auth = getAuth();
-  console.log(auth);
   const [user, setUser] = React.useState([]);
   const [userImg, setUserImg] = React.useState(DefaultImage);
   const userId = localStorage.getItem("UserId");
@@ -25,6 +26,7 @@ const Sidebar = () => {
         params: { userId },
       });
       setUser(response.data.user);
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -44,11 +46,16 @@ const Sidebar = () => {
     }
   };
 
+  const logout = () => {
+    navigate('/login');
+    localStorage.clear();
+  }
+
   return (
     <div className="Sidebar">
       <div className="profile">
         <a href="#">
-          <img className="avatar" src={userImg} />
+          <img className="avatar" src={user.photo ? require(`../Assets/Images/${user.photo}`) : userImg} />
         </a>
         <h3>{user ? user.name : ""}</h3>
       </div>
@@ -94,23 +101,9 @@ const Sidebar = () => {
           <img src={Global} /> <h3>#Global</h3>
         </button>
         <button
-          className={`${active === "support" ? "selected" : ""}`}
-          id="support"
-          onClick={addActiveClass}
-        >
-          <img src={Support} /> <h3>#Support</h3>
-        </button>
-        <button
-          className={`${active === "premium" ? "selected" : ""}`}
-          id="premium"
-          onClick={addActiveClass}
-        >
-          <img src={Setting} /> <h3>#Setting</h3>
-        </button>
-        <button
           className={`${active === "logout" ? "selected" : ""}`}
           id="logout"
-          onClick={addActiveClass}
+          onClick={logout}
         >
           <img src={Logout} /> <h3>#Logout</h3>
         </button>

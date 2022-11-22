@@ -86,8 +86,8 @@ function Card() {
     setLastDirection(direction);
     updateCurrentIndex(index - 1);
     if (direction === "right") {
-      // updateMatches(swipedUserId);
-      console.log(swipedUserId);
+      updateMatches(swipedUserId);
+      // console.log(swipedUserId);
     }
   };
 

@@ -1,0 +1,413 @@
+@import url("../../../global.css");
+
+
+.lets-complete-the-profile {
+    font-size: var(--font-size-4xl);
+    line-height: 150%;
+    display: inline-block;
+  }
+  .face-icon {
+    position: absolute;
+    top: 234px;
+    left: 157px;
+    width: 302px;
+    height: 308px;
+  }
+  .inputtextnone-textfield {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .input-last-name {
+    position: absolute;
+    height: 7.07%;
+    width: 30%;
+    top: 32%;
+    right: 15.8%;
+    bottom: 60.93%;
+    left: 54.2%;
+  }
+  .input-first-name,
+  .input-last-name1 {
+    position: absolute;
+    height: 20.27%;
+    width: 51.3%;
+    top: 62.09%;
+    right: 15.8%;
+    bottom: 17.63%;
+    left: 32.9%;
+  }
+  .input-first-name {
+    height: 7.07%;
+    width: 30%;
+    top: 24.39%;
+    bottom: 68.53%;
+    left: 54.2%;
+    cursor: pointer;
+  }
+  .photo-icon {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .photo-main-div,
+  .rectangle-icon {
+    position: absolute;
+    top: 0.09px;
+    left: 0;
+    width: 144px;
+    height: 191.91px;
+  }
+  .rectangle-icon {
+    top: 0;
+    left: 0.25px;
+    border-radius: var(--br-xl);
+    width: 143.68px;
+    height: 192px;
+  }
+  .plus-math-icon {
+    position: absolute;
+    top: 71px;
+    left: 54.73px;
+    width: 34.05px;
+    height: 50px;
+    object-fit: cover;
+  }
+  .container-div,
+  .gallery-div {
+    position: absolute;
+    top: 588px;
+    left: 157px;
+    width: 144px;
+    height: 192px;
+  }
+  .container-div {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-xl);
+    background-color: var(--red-e94057);
+    opacity: 0.1;
+  }
+  .b {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 57.5px;
+    display: inline-block;
+  }
+  .iconcalendar {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 19px;
+    width: 20px;
+    height: 22px;
+  }
+  .input-calendar-div {
+    position: absolute;
+    height: 6.34%;
+    width: 16%;
+    top: 49.42%;
+    right: 29.8%;
+    bottom: 44.24%;
+    left: 54.2%;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  .b1 {
+    position: absolute;
+    top: calc(50% - 11px);
+    left: 42px;
+    display: inline-block;
+    width: 71px;
+  }
+  .facebook-like-icon {
+    position: absolute;
+    top: 20px;
+    left: 21px;
+    width: 21px;
+    height: 21px;
+    object-fit: cover;
+  }
+  .input-calendar-div1 {
+    position: absolute;
+    height: 6.34%;
+    width: 12.8%;
+    top: 49.52%;
+    right: 15.8%;
+    bottom: 44.14%;
+    left: 71.4%;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  .continue-b {
+    position: absolute;
+    height: 40%;
+    width: 78.31%;
+    top: 28.57%;
+    right: 10.85%;
+    bottom: 31.43%;
+    left: 10.85%;
+    line-height: 150%;
+    display: inline-block;
+  }
+  .btnnext-div {
+    position: absolute;
+    top: 839px;
+    left: 517px;
+    width: 300px;
+    height: 60px;
+    font-size: var(--font-size-xl);
+    color: var(--text-white-ffffff);
+  }
+  .rectangle-div:active {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-xl);
+    background-color: var(--red-e94057);
+  }
+  .component-1-div {
+    position: absolute;
+    top: 389px;
+    left: 542px;
+    width: 80px;
+    height: 60px;
+    color: var(--text-white-ffffff);
+  }
+  .rectangle-div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-xl);
+    background-color: var(--color-gray-300);
+  }
+  .gender-b {
+    position: absolute;
+    height: 50%;
+    width: 83.75%;
+    top: 25%;
+    right: 7.5%;
+    bottom: 25%;
+    left: 8.75%;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .component-2-div{
+    position: absolute;
+    top: 389px;
+    left: 644px;
+    width: 80px;
+    height: 60px;
+  }
+  .component-3-div,
+  .formprofile-div {
+    position: absolute;
+    top: 389px;
+    left: 746px;
+    width: 96px;
+    height: 60px;
+  }
+  .formprofile-div {
+    top: 0;
+    left: 451px;
+    background-color: var(--text-white-ffffff);
+    border-top: 0 solid var(--color-gray-1100);
+    border-right: 1px solid var(--color-gray-1100);
+    border-bottom: 0 solid var(--color-gray-1100);
+    border-left: 1px solid var(--color-gray-1100);
+    box-sizing: border-box;
+    width: 1000px;
+    height: 947px;
+    overflow: hidden;
+  }
+  .logo-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61.84px;
+    height: 61.84px;
+    object-fit: cover;
+  }
+  .profile-detail-div .bedating {
+    position: absolute;
+    top: 8.83px;
+    left: 59px;
+    line-height: 150%;
+    display: inline-block;
+  }
+  .logo-div {
+    position: absolute;
+    top: 9px;
+    left: 859px;
+    width: 202px;
+    height: 61.84px;
+  }
+  .header-div,
+  .profile-detail-div {
+    background-color: var(--text-white-ffffff);
+    overflow: hidden;
+  }
+  .header-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 0 solid var(--color-gray-1200);
+    border-right: 0 solid var(--color-gray-1200);
+    border-bottom: 3px solid var(--color-gray-1200);
+    border-left: 0 solid var(--color-gray-1200);
+    box-sizing: border-box;
+    width: 1920px;
+    height: 83px;
+    font-size: var(--font-size-4xl);
+  }
+
+
+  /*edittttttttttttttttttttt*/
+
+.profile-detail-div{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+.content-profile{
+    width: 60%;
+    height: 100vh;
+    border-right: 1px solid #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+}
+.content-profile .content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.content-profile .content-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.content-profile .content-1-2{
+    margin-left: 5%;
+}
+.content-profile .content-1-2 .firstname{
+    width: 100%;
+}
+.content-profile .btnSave{
+    font-size: 20px;
+}
+
+.content-profile .content-2{
+    display: flex;
+    flex-direction: row;
+}
+.content-profile .ant-radio-button-wrapper-checked{
+
+    color: var(--red-e94057);
+    background: var(--red-e94057) !important;
+    border: none !important;
+}
+.content-profile .ant-radio-button-wrapper-checked h1{
+    color: #fff !important;
+}
+.content-profile .ant-radio-button-wrapper:hover{
+    background: var(--red-e94057) !important;
+}
+.content-profile .dob{
+    display: flex;
+    flex-direction: row;
+}
+.content-profile h1{
+    color: var(--red-e94057) !important;
+    text-align: center;
+    font-size: 15px ;
+
+}
+.content-profile h1:hover{
+    color: #fff !important;
+    text-align: center;
+    font-size: 15px ;
+}
+/* tile uploaded pictures */
+.content-profile .ant-upload-select-picture-card {
+    width: 300px !important;
+    height: 300px !important;
+    margin-right: 8px;
+  }
+  
+  .upload-list-inline [class*='-upload-list-rtl'] .ant-upload-list-item {
+    float: right;
+  }
+  .ant-upload-list-picture-card-container{
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .anticon-picture{
+    font-size: 50px !important;
+    margin-top: 40% !important;
+  }
+  /* .ant-form-item-control-input{
+    width: 600px;
+  } */
+  .ant-radio-group{
+    width: 500px;
+  }
+  .ant-radio-button-wrapper{
+    width: 100px ;
+    height: 40px !important;
+    padding: 5px !important;
+    margin-right: 10% !important;
+    border-radius: 10px !important;
+
+  }
+  .ant-radio-button-inner{
+    border: none;
+  }
+  .ant-picker-input{
+    width:160px !important;
+    height:30px !important; 
+    border-radius: 10px !important;
+  }
+  .ant-select{
+    width: 200px !important;
+    margin-left: 20px !important;
+  }
+  .ant-select-selector{
+
+    border-radius: 10px !important;
+    height:40px !important; 
+  }
+.ant-picker{
+    
+    border-radius: 10px !important;
+    
+}
