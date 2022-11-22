@@ -5,6 +5,8 @@ import Search from "../Assets/SVG/search.svg";
 import Images from "../Assets/SVG/image.svg";
 import Send from "../Assets/SVG/send.svg";
 import Avatar from "../Assets/Images/Avatar/avatar.jpg";
+import Message from "../Components/Message";
+import Conversation from "../Components/Conversation";
 import { io } from "socket.io-client";
 import axios from "axios";
 
@@ -15,6 +17,7 @@ const Messages = () => {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [user, setUser] = useState([]);
+  const [matchesUser, setMatchesUser] = useState([]);
   const socket = useRef();
   const scrollRef = useRef();
 
@@ -30,9 +33,27 @@ const Messages = () => {
     }
   };
 
+  const getAllMatches = async () => {
+    const userId = localStorage.getItem("UserId");
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/users/get-matches",
+        {
+          params: { id: userId },
+        }
+      );
+      setMatchesUser(response.data.users);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     getUser();
-    console.log(user);
+  }, []);
+
+  useEffect(() => {
+    getAllMatches();
   }, []);
 
   useEffect(() => {
@@ -53,12 +74,17 @@ const Messages = () => {
   }, [arrivalMessage, currentChat]);
 
   useEffect(() => {
+    socket.current.emit("addUser", user._id);
+  }, [user]);
+
+  useEffect(() => {
+    const userId = localStorage.getItem("UserId");
     const getConversations = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/conversations/" + user._id
+          "http://localhost:8000/conversations/" + userId
         );
-        setConversations(response.data);
+        setConversations(response.data.conversations);
       } catch (err) {
         console.log(err);
       }
@@ -72,7 +98,7 @@ const Messages = () => {
         const response = await axios.get(
           "http://localhost:8000/messages/" + currentChat?._id
         );
-        setMessages(response.data);
+        setMessages(response.data.messages);
       } catch (err) {
         console.log(err);
       }
@@ -82,6 +108,9 @@ const Messages = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (e.key === 'Enter') {
+      console.log('do validate');
+    }
     const message = {
       sender: user._id,
       text: newMessage,
@@ -103,7 +132,7 @@ const Messages = () => {
         "http://localhost:8000/messages",
         message
       );
-      setMessages([...messages, response.data]);
+      setMessages([...messages, response.data.newMessage]);
       setNewMessage("");
     } catch (err) {
       console.log(err);
@@ -130,188 +159,28 @@ const Messages = () => {
             <div class="row">
               <div class="col-md-3">
                 <div class="listMess">
-                  <div class="userMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
+                  {conversations?.map((c) => (
+                    <div onClick={() => setCurrentChat(c)}>
+                      <Conversation conversation={c} currentUser={user} />
                     </div>
-                    <div class="infoMess">
-                      <h5>Anh Ngoc</h5>
-                      <p>Sao anh hãm thế nhỉ, đm anh nữa </p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* 2 */}
-                  <div class="userMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="infoMess">
-                      <h5>Anh Ngoc</h5>
-                      <p>Đã gửi cho bạn một tin nhắn</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* 3 */}
-                  <div class="userMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="infoMess">
-                      <h5>Anh Ngoc</h5>
-                      <p>Đã gửi cho bạn một tin nhắn</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* 4 */}
-                  <div class="userMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="infoMess">
-                      <h5>Anh Ngoc</h5>
-                      <p>Đã gửi cho bạn một tin nhắn</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* 5 */}
-                  <div class="userMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="infoMess">
-                      <h5>Anh Ngoc</h5>
-                      <p>Đã gửi cho bạn một tin nhắn</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div class="col-md-9">
                 <div class="chatMess">
-                  {/* NHẮN */}
-                  <div class="fromMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
+                  {currentChat ? (
+                    <div>
+                      {messages.map((m) => (
+                        <div ref={scrollRef}>
+                          <Message message={m} own={m.sender === user._id} />
+                        </div>
+                      ))}
                     </div>
-
-                    <div class="contentMess">
-                      <p>Helo anh dep trai, toi nay di choi voi em khong ne`</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* Trả lời */}
-                  <div class="toMess">
-                    <div class="contentMess">
-                      <p>Xin lỗi em nhé, anh có người yêu rồi</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:00</p>
-                    </div>
-                  </div>
-
-                  {/* Nhắn */}
-                  <div class="fromMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="contentMess">
-                      <p>Thế cho em làm quen anh được không ạ?</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>10:06</p>
-                    </div>
-                  </div>
-
-                  {/* Trả Lời */}
-                  <div class="toMess">
-                    <div class="contentMess">
-                      <p>Không em nhé!</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>11:30</p>
-                    </div>
-                  </div>
-
-                  {/* Nhắn */}
-                  <div class="fromMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-
-                    <div class="contentMess">
-                      <p>
-                        Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh
-                        hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế
-                        nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc
-                        người yêu anh khổ lắm
-                      </p>
-                    </div>
-                    <div class="timeMess">
-                      <p>12:34</p>
-                    </div>
-                  </div>
-
-                  {/* Trả Lời */}
-                  <div class="toMess">
-                    <div class="contentMess">
-                      <p>Ừ em</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>11:30</p>
-                    </div>
-                  </div>
-
-                  {/* Nhắn */}
-                  <div class="fromMess">
-                    <div class="imgMess">
-                      <img src={Avatar} alt="avt1" />
-                    </div>
-                    <div class="contentMess">
-                      <p>Ừ cái đmm</p>
-                    </div>
-                    <div class="timeMess">
-                      <p>12:34</p>
-                    </div>
-                  </div>
-
-                  {/* Trả Lời */}
-                  <div class="toMess">
-                    <div class="contentMess">
-                      <p>
-                        Anh xin lỗi nhé! Sao anh hãm thế nhỉ chắc người yêu anh
-                        khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao
-                        anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm
-                        thế nhỉ chắc người yêu anh khổ lắm Sao anh hãm thế nhỉ
-                        chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc người
-                        yêu anh khổ lắmSao anh hãm thế nhỉ chắc người yêu anh
-                        khổ lắmSao anh hãm thế nhỉ chắc người yêu anh khổ lắm
-                        Sao anh hãm thế nhỉ chắc người yêu anh khổ lắmSao anh
-                        hãm thế nhỉ chắc người yêu anh khổ lắmSao anh hãm thế
-                        nhỉ chắc người yêu anh khổ lắmSao anh hãm thế nhỉ chắc
-                        người yêu anh khổ lắm
-                      </p>
-                    </div>
-                    <div class="timeMess">
-                      <p>11:30</p>
-                    </div>
-                  </div>
+                  ) : (
+                    <span className="noConversationText">
+                      Open a conversation to start a chat.
+                    </span>
+                  )}
                 </div>
                 {/* textMess */}
                 <div class="textMess">
@@ -324,8 +193,11 @@ const Messages = () => {
                       type="text"
                       placeholder="Messages"
                       className="inputMess"
+                      onChange={(e) => setNewMessage(e.target.value)}
+                      onKeyDown={handleSubmit}
+                      value={newMessage}
                     />
-                    <button type="button" className="btnMess">
+                    <button type="button" className="btnMess" onClick={handleSubmit}>
                       <img src={Send} alt="sent" />
                     </button>
                   </div>

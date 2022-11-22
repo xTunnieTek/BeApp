@@ -2,7 +2,8 @@ const Message = require("../models/messageModel");
 
 // add (send) message
 exports.addMessage = async (req, res) => {
-  const newMessage = Message.create(req.body);
+  const newMessage = await Message.create(req.body);
+  console.log(newMessage);
   return res.status(200).json({
     message: "success",
     newMessage,

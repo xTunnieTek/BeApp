@@ -26,7 +26,6 @@ const Sidebar = () => {
         params: { userId },
       });
       setUser(response.data.user);
-      console.log(user);
     } catch (error) {
       console.log(error);
     }
