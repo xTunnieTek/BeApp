@@ -29,7 +29,7 @@ function Card() {
       const response = await axios.get(
         "http://localhost:8000/users/gendered-users",
         {
-          params: { gender: user?.gender_interest },
+          params: { gender: user?.gender_interest,id:userId },
         }
       );
       console.log(response);

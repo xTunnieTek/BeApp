@@ -9,6 +9,8 @@ import Message from "../Components/Message";
 import Conversation from "../Components/Conversation";
 import { io } from "socket.io-client";
 import axios from "axios";
+import Peer from 'simple-peer';
+import {PhoneOutlined} from '@ant-design/icons';
 
 const Messages = () => {
   const [conversations, setConversations] = useState([]);
@@ -18,8 +20,90 @@ const Messages = () => {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [user, setUser] = useState([]);
   const [matchesUser, setMatchesUser] = useState([]);
+  const [ me, setMe ] = useState("")
+	const [ stream, setStream ] = useState()
+	const [ receivingCall, setReceivingCall ] = useState(false)
+	const [ caller, setCaller ] = useState("")
+	const [ callerSignal, setCallerSignal ] = useState()
+	const [ callAccepted, setCallAccepted ] = useState(false)
+	const [ idToCall, setIdToCall ] = useState("")
+	const [ callEnded, setCallEnded] = useState(false)
+	const [ name, setName ] = useState("")
+	const myVideo = useRef()
+	const userVideo = useRef()
+	const connectionRef= useRef()
   const socket = useRef();
   const scrollRef = useRef();
+
+  useEffect(() => {
+    socket.current = io("ws://localhost:8900");
+		navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
+			setStream(stream)
+				myVideo.current.srcObject = stream
+		})
+
+	socket.current.on("me", (id) => {
+			setMe(id)
+		})
+
+		socket.current.on("callUser", (data) => {
+			setReceivingCall(true)
+			setCaller(data.from)
+			setName(data.name)
+			setCallerSignal(data.signal)
+		})
+	}, [])
+
+	const callUser = (id) => {
+		const peer = new Peer({
+			initiator: true,
+			trickle: false,
+			stream: stream
+		})
+		peer.on("signal", (data) => {
+			socket.current.emit("callUser", {
+				userToCall: id,
+				signalData: data,
+				from: me,
+				name: name
+			})
+		})
+		peer.on("stream", (stream) => {
+			
+				userVideo.current.srcObject = stream
+			
+		})
+		socket.current.on("callAccepted", (signal) => {
+			setCallAccepted(true)
+			peer.signal(signal)
+		})
+
+		connectionRef.current = peer
+	}
+
+	const answerCall =() =>  {
+		setCallAccepted(true)
+		const peer = new Peer({
+			initiator: false,
+			trickle: false,
+			stream: stream
+		})
+		peer.on("signal", (data) => {
+			socket.current.emit("answerCall", { signal: data, to: caller })
+		})
+		peer.on("stream", (stream) => {
+			userVideo.current.srcObject = stream
+		})
+
+		peer.signal(callerSignal)
+		connectionRef.current = peer
+	}
+
+	const leaveCall = () => {
+		setCallEnded(true)
+		connectionRef.current.destroy()
+	}
+
 
   const getUser = async () => {
     const userId = localStorage.getItem("UserId");
@@ -108,9 +192,6 @@ const Messages = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (e.key === 'Enter') {
-      console.log('do validate');
-    }
     const message = {
       sender: user._id,
       text: newMessage,
@@ -168,6 +249,7 @@ const Messages = () => {
               </div>
               <div class="col-md-9">
                 <div class="chatMess">
+                {stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
                   {currentChat ? (
                     <div>
                       {messages.map((m) => (
@@ -188,13 +270,15 @@ const Messages = () => {
                     <label for="file" className="fileMess">
                       <img src={Images} alt="file" />
                     </label>
+                    <button>
+                      <PhoneOutlined />
+                    </button>
                     <input type="file" className="fileMess" id="file" />
                     <input
                       type="text"
                       placeholder="Messages"
                       className="inputMess"
                       onChange={(e) => setNewMessage(e.target.value)}
-                      onKeyDown={handleSubmit}
                       value={newMessage}
                     />
                     <button type="button" className="btnMess" onClick={handleSubmit}>

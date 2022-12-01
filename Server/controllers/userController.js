@@ -96,7 +96,8 @@ exports.updateMe = async (req, res, next) => {
 
 exports.getGenderInterestUser = async (req, res, next) => {
   const gender = req.query.gender;
-  const users = await User.find({ gender });
+  const id = req.query.id;
+  const users = await User.find({ gender,  matches: { $nin: [id] } });
   return res.status(200).json({
     status: "success",
     users,

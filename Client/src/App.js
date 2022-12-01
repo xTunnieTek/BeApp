@@ -9,7 +9,6 @@ import Login from "./Pages/Login";
 import Notification from "./Pages/Notification";
 import Profile from "./Pages/Profile";
 import Upload from "./Pages/Upload";
-import Chat from "./Pages/Chat";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
